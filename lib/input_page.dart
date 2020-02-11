@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bmi_calcurator/result_page.dart';
 import 'package:flutter_bmi_calcurator/resuseable_card.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -206,10 +207,19 @@ class _InputPageState extends State<InputPage> {
                 ],
               ),
             ),
-            Container(
-              color: kBottomContainerColor,
-              margin: EdgeInsets.only(top: 10),
-              height: kBottomContainerHeight,
+            GestureDetector(
+              onTap: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) {
+                  return ResultPage();
+                }));
+              },
+              child: Container(
+                color: kBottomContainerColor,
+                margin: EdgeInsets.only(top: 10),
+                height: kBottomContainerHeight,
+                child: Text("CALCULATOR"),
+                width: double.infinity,
+              ),
             )
           ],
         ));
